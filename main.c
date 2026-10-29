@@ -1,27 +1,26 @@
-
 #include <stdio.h>
-#include <stdlib.h>
 #define SIZE 5
 
 int main(void)
 {
     int i;
-    int grade[SIZE];
-    int score[SIZE];
+    int a[SIZE] = {1, 2, 3, 4, 5};
+    int b[SIZE] = {1, 2, 8, 4, 9};
+    int ag_same = 1;
 
     for (i = 0; i < SIZE; i++)
     {
-        grade[i] = rand() % 100;
+        if (a[i] != b[i])
+        {
+            printf("index %d: a[%d] = %d, b[%d] = %d\n",
+                   i, i, a[i], i, b[i]);
+            ag_same = 0;
+        }
     }
 
-    for (i = 0; i < SIZE; i++)
+    if (ag_same == 1)
     {
-        score[i] = grade[i];
-    }
-
-    for (i = 0; i < SIZE; i++)
-    {
-        printf("score[%d] = %d\n", i, score[i]);
+        printf("배열은 같은 값을 가집니다.\n");
     }
 
     return 0;
